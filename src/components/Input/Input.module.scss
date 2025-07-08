@@ -1,0 +1,55 @@
+.inputGroup {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-bottom: 2px solid #444;
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+
+  &:focus {
+    border-bottom-color: #8b5cf6;
+  }
+
+  &.error {
+    border-bottom-color: #ff4d4f;
+  }
+}
+
+.label {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  transition: all 0.3s;
+  pointer-events: none;
+  font-size: 1rem;
+
+  &.active,
+  .input:focus ~ & {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #8b5cf6;
+  }
+
+  .input.error ~ & {
+    color: #ff4d4f;
+  }
+}
+
+@media (max-width: 600px) {
+  .inputGroup {
+    margin: 1.5rem 0;
+  }
+
+  .input {
+    padding: 0.6rem;
+  }
+}
